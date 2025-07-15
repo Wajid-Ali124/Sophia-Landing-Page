@@ -904,8 +904,7 @@ body {
   justify-content: center;
   align-items: center;
   max-width: 1200px;
-  margin: auto;
-  margin-bottom: 2.5rem;
+  margin: 40px auto;
 }
 
 .faqs .left-side {
@@ -1255,7 +1254,7 @@ hr {
 
   .faqs {
     width: 90vw;
-    margin: auto;
+    margin: 40px auto;
     flex-direction: column;
     align-items: start;
   }
