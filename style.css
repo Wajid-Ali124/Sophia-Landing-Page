@@ -917,7 +917,7 @@ body {
 }
 
 .faqs .right-side img {
-  position: relative;
+  position: static;
 }
 
 /* Build Sophia */
@@ -1176,6 +1176,10 @@ hr {
     left: 55%;
   }
 
+  .chat-input {
+    padding: 0.1rem 0.2rem;
+  }
+
   .how-it-works {
     width: 90vw;
     margin: auto;
@@ -1260,7 +1264,7 @@ hr {
     align-items: start;
   }
 
-  .faqs img {
+  .faqs .left-side img {
     display: none;
   }
 

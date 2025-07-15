@@ -98,7 +98,7 @@ const AccordionMaker = (data, containerId, active) => {
   accordionItem.appendChild(body);
 
   header.addEventListener("click", () => {
-    document.querySelectorAll(".accordion-item").forEach(el => el.classList.remove("active"));
+    containerId.querySelectorAll(".accordion-item").forEach(el => el.classList.remove("active"));
     accordionItem.classList.add("active");
   });
 
