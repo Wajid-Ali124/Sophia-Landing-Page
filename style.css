@@ -218,6 +218,7 @@ body {
 
 .chat-border-wrapper {
   position: relative;
+  margin: auto;
   width: 24.13rem;
   height: 32.5rem;
   border-radius: 1.25rem;
