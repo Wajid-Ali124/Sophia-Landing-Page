@@ -768,13 +768,13 @@ body {
   border-radius: 1.25rem;
   z-index: 5;
   padding: 1.31rem;
-  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.05);
 }
 
 .results .content {
   display: flex;
   background: linear-gradient(120deg, #e738b024 0%, transparent 50%);
   border-radius: 1.25rem;
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.05);
   padding: 1.44rem;
 }
 
@@ -788,6 +788,11 @@ body {
   font-size: 3.25rem;
   line-height: 3.75rem;
   margin-bottom: 2.5rem;
+}
+
+.results-header-divider hr{
+  margin-left: -2rem;
+  margin-top: -1.5rem;
 }
 
 .results-text .chester-logo {
@@ -806,7 +811,7 @@ body {
 
 .right-side {
   color: #333;
-  flex: 1;
+  flex: 0.7;
   border-radius: 0.63rems;
   position: relative;
 }
@@ -971,13 +976,14 @@ body {
 
 #demo .content{
   display: flex;
+  /* justify-content: space-between; */
 }
 #demo .content .results-text{
   flex: 1;
 }
 
 #demo .content .right-side{
-  flex: 1;
+  flex: 0;
 }
 
 .chat-loader-overlay {
