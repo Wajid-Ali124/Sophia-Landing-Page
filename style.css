@@ -1045,6 +1045,7 @@ body {
 
 /* Build Sophia */
 .build-sophia {
+  margin-top: 40px;
   display: flex;
   position: relative;
   justify-content: center;
@@ -1361,7 +1362,7 @@ hr {
   }
   .results {
     width: 90vw;
-    margin: auto;
+    margin: 40px auto;
   }
   .results .content {
     flex-direction: column;
