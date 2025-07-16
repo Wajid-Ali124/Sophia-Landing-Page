@@ -82,31 +82,149 @@ const faqData = [
 const faqContainer = document.getElementById("faqAccordion");
 
 const AccordionMaker = (data, containerId, active) => {
+  const items = [];
+
   data.forEach((item, index) => {
-  const accordionItem = document.createElement("div");
-  accordionItem.classList.add("accordion-item");
-  if (index === active) accordionItem.classList.add("active");
+    const borderWrapper = document.createElement("div");
+    borderWrapper.classList.add("border-wrapper");
 
-  const header = document.createElement("div");
-  header.classList.add("accordion-header");
-  header.innerHTML = `<h3>${item.title}</h3><span class="arrow"><img src="/images/icons/arrowRightIcon.png" alt="Right Arrow"></span>`;
-  accordionItem.appendChild(header);
+    const whiteBg = document.createElement("div");
+    whiteBg.classList.add("white-bg");
 
-  const body = document.createElement("div");
-  body.classList.add("accordion-body");
-  body.textContent = item.description;
-  accordionItem.appendChild(body);
+    const accordionItem = document.createElement("div");
+    accordionItem.classList.add("accordion-item");
 
-  header.addEventListener("click", () => {
-    containerId.querySelectorAll(".accordion-item").forEach(el => el.classList.remove("active"));
-    accordionItem.classList.add("active");
+    const header = document.createElement("div");
+    header.classList.add("accordion-header");
+    header.innerHTML = `<h3>${item.title}</h3><span class="arrow"><img src="/images/icons/arrowRightIcon.png" alt="Right Arrow"></span>`;
+
+    const body = document.createElement("div");
+    body.classList.add("accordion-body");
+    body.textContent = item.description;
+
+    accordionItem.appendChild(header);
+    accordionItem.appendChild(body);
+    whiteBg.appendChild(accordionItem);
+    borderWrapper.appendChild(whiteBg);
+
+    // Store everything, including index
+    items.push({ index, borderWrapper, whiteBg, accordionItem });
+
+    // Initial render
+    if (index === active) {
+      accordionItem.classList.add("active");
+      containerId.appendChild(borderWrapper);
+    } else {
+      containerId.appendChild(accordionItem);
+    }
+
+    // Add click logic
+    header.addEventListener("click", () => {
+      items.forEach((entry) => {
+        entry.accordionItem.classList.remove("active");
+
+        // Remove border wrapper if present
+        if (containerId.contains(entry.borderWrapper)) {
+          containerId.removeChild(entry.borderWrapper);
+        }
+
+        // Re-insert plain accordionItem in correct order
+        const refNode = containerId.children[entry.index];
+        if (!containerId.contains(entry.accordionItem)) {
+          containerId.insertBefore(entry.accordionItem, refNode || null);
+        }
+      });
+
+      // Activate and wrap current
+      accordionItem.classList.add("active");
+
+      if (accordionItem.parentNode !== whiteBg) {
+        whiteBg.appendChild(accordionItem);
+      }
+
+      // Insert borderWrapper in original position
+      const refNode = containerId.children[index];
+      containerId.insertBefore(borderWrapper, refNode || null);
+    });
   });
+};
 
-  containerId.appendChild(accordionItem);
-});
-}
+
 
 AccordionMaker(accordionData, accordionContainer, 0);
 
 AccordionMaker(faqData, faqContainer, 2);
+
+
+
+const messagesData = [
+  {
+    sender: 'user',
+    text: "Hi! Can I book an appointment for next week?",
+    timestamp: "11:00 am",
+    image: "/images/male.png"
+  },
+  {
+    sender: 'bot',
+    text: "Absolutely👋 Our next available slot is next Tuesday at 2 pm. Would that work?",
+    timestamp: "11:01 am",
+    image: "/images/female.png"
+  },
+  {
+    sender: "user",
+    text: "Awesome, let's do it.",
+    timestamp: "11:04 am",
+    image: "/images/male.png"
+  },
+  {
+    sender: "bot",
+    text: "All set! I've sent a confirmation email – can't wait to see you! ✨",
+    timestamp: "11:05 am",
+    image: "/images/female.png"
+  },
+  {
+    sender: "user",
+    text: "Awesome.",
+    timestamp: "11:06 am",
+    image: "/images/male.png"
+  },
+  {
+    sender: "bot",
+    text: "can't wait to see you! ✨",
+    timestamp: "11:06 am",
+    image: "/images/female.png"
+  }
+];
+
+// Target the container
+const chatContainer = document.querySelector('.demo-chatbox');
+
+// Function to create and insert messages
+function renderMessages(messages) {
+  chatContainer.innerHTML = ""; 
+  messages.forEach(msg => {
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('message', msg.sender);
+
+    messageDiv.innerHTML = `
+      <img src="${msg.image}" class="user-img" alt="User" />
+        <div class="bubble">${msg.text}</div>
+        <span class="timestamp">${msg.timestamp} &nbsp; <img src="/images/icons/dtIcon.png" alt="" /></span>
+    `;
+
+    chatContainer.appendChild(messageDiv);
+  });
+}
+
+
+window.addEventListener("DOMContentLoaded", () => {
+  const loader = document.querySelector(".chat-loader-overlay");
+
+  // Simulate loading delay (e.g., fetching messages)
+  setTimeout(() => {
+    if (loader) loader.remove();
+
+   renderMessages(messagesData); 
+  }, 1000); // 1 second delay
+});
 
