@@ -448,8 +448,8 @@ body {
 .how-badge {
   font-size: 0.88rem;
   font-weight: 600;
-  color: #125EF2;
-  background: #F8FAFC;
+  color: #125ef2;
+  background: #f8fafc;
   display: inline-block;
   padding: 0.75rem 0.75rem;
   border-radius: 999px;
@@ -499,7 +499,7 @@ body {
 }
 
 .how-cards .border-wrapper:hover {
-  box-shadow: 0rem 0.2rem 0.09rem 0.09rem rgba(0, 0, 0, 0.055);
+  box-shadow: 0rem 0.3rem 0.09rem 0.09rem rgba(0, 0, 0, 0.052);
 }
 
 .how-card {
@@ -679,12 +679,12 @@ body {
 }
 
 #accordion .border-wrapper::before {
- background-image: conic-gradient(from 270deg, #ecab71 0deg, #fa6cb3 10deg, #a86ae5 20deg, transparent 90deg);
+  background-image: conic-gradient(from 270deg, #ecab71 0deg, #fa6cb3 10deg, #a86ae5 20deg, transparent 90deg);
 }
 
-#accordion .white-bg{
-    padding: 0px;
-    border-radius: 0.75rem;
+#accordion .white-bg {
+  padding: 0px;
+  border-radius: 0.75rem;
 }
 
 .accordion-item {
@@ -790,7 +790,7 @@ body {
   margin-bottom: 2.5rem;
 }
 
-.results-header-divider hr{
+.results-header-divider hr {
   margin-left: -2rem;
   margin-top: -1.5rem;
 }
@@ -950,12 +950,12 @@ body {
 }
 
 #faqAccordion .border-wrapper::before {
- background-image: conic-gradient(from 270deg, #a86ae5 0deg, #fa6cb3 10deg, #ecab71 20deg, transparent 90deg);
+  background-image: conic-gradient(from 270deg, #a86ae5 0deg, #fa6cb3 10deg, #ecab71 20deg, transparent 90deg);
 }
 
-#faqAccordion .white-bg{
-    padding: 0px;
-    border-radius: 0.75rem;
+#faqAccordion .white-bg {
+  padding: 0px;
+  border-radius: 0.75rem;
 }
 
 #faqAccordion .accordion-item {
@@ -967,27 +967,26 @@ body {
   z-index: 5;
 }
 
-
 /* DEMO */
 
-#demo img{
+#demo img {
   position: static;
 }
 
-#demo .content{
+#demo .content {
   display: flex;
   justify-content: space-between;
 }
 
-#demo .content .chat-border-wrapper::before{
-   background-image: conic-gradient(from 290deg, #a86ae5 0deg, #fa6cb3 10deg, #ecab71 20deg, transparent 90deg);
+#demo .content .chat-border-wrapper::before {
+  background-image: conic-gradient(from 290deg, #a86ae5 0deg, #fa6cb3 10deg, #ecab71 20deg, transparent 90deg);
   animation: none;
 }
-#demo .content .results-text{
+#demo .content .results-text {
   flex: 1;
 }
 
-#demo .content .right-side{
+#demo .content .right-side {
   flex: 0;
 }
 
@@ -1027,9 +1026,7 @@ body {
   }
 }
 
-
-
-.demo-chatbox{
+.demo-chatbox {
   width: 24.13rem;
   max-height: 32rem; /* or whatever height fits your design */
   overflow-y: auto;
@@ -1046,7 +1043,6 @@ body {
   background-color: rgba(0, 0, 0, 0.2); /* Scrollbar color */
   border-radius: 3px;
 }
-
 
 /* Build Sophia */
 .build-sophia {
@@ -1169,7 +1165,7 @@ body {
   padding: 0.4rem 0.88rem;
   border-radius: 12.5rem;
   color: #125ef2;
-  background-color: #e8eaf8;
+  background: #f8fafc;
 }
 
 .badge.new {
@@ -1268,7 +1264,7 @@ hr {
 
 @media (max-width: 768px) {
   html {
-    font-size: 12.8px;
+    font-size: 14px;
   }
   .menu-toggle {
     display: block;
@@ -1280,12 +1276,13 @@ hr {
   }
 
   .hero-text h1 {
-    font-size: 27px;
+    font-size: 29px;
     margin-top: 2rem;
   }
   .hero-text .subtext {
     font-size: 1.11rem;
     width: 83%;
+    margin-bottom: 4rem;
   }
 
   .nav-btn {
@@ -1301,12 +1298,11 @@ hr {
   }
 
   .above {
-    width: 220px;
-    top: 17px;
-    left: 55%;
+    width: 300px;
+    top: 0px;
+    left: 42%;
   }
-
-  .chat-border-wrapper{
+  .chat-border-wrapper {
     height: 34rem;
   }
   .chat-input {
@@ -1348,10 +1344,10 @@ hr {
   }
 
   .below {
-    width: 220px;
-    bottom: 33rem;
+    width: 300px;
+    bottom: 35rem;
     position: absolute;
-    left: 44%;
+    left: 31%;
   }
 
   .feature-content {
@@ -1401,10 +1397,9 @@ hr {
     display: none;
   }
 
-  
-#demo .content{
-  grid-template-columns: 1fr;
-}
+  #demo .content {
+    grid-template-columns: 1fr;
+  }
 
   .build-sophia {
     width: 90vw;
