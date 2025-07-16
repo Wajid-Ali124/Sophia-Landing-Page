@@ -499,7 +499,7 @@ body {
 }
 
 .how-cards .border-wrapper:hover {
-  box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.134);
+  box-shadow: 0rem 0.2rem 0.09rem 0.09rem rgba(0, 0, 0, 0.055);
 }
 
 .how-card {
