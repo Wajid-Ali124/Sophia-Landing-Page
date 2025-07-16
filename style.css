@@ -736,7 +736,7 @@ body {
 }
 
 .accordion-item.active .arrow {
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }
 
 /* Real Results Section */
