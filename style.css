@@ -976,7 +976,12 @@ body {
 
 #demo .content{
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
+}
+
+#demo .content .chat-border-wrapper::before{
+   background-image: conic-gradient(from 290deg, #a86ae5 0deg, #fa6cb3 10deg, #ecab71 20deg, transparent 90deg);
+  animation: none;
 }
 #demo .content .results-text{
   flex: 1;
